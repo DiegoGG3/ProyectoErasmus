@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="pdf.js"></script>
+    <title>Document</title>
+    <style>
+        #contenedor{
+            position: relative;
+            width: 320px;
+            height: 240px;
+        }
+        #cuadradito{
+            position: absolute;
+            width: 90px;
+            height: 120px;
+            left: 50px;
+            top: 50px;
+            z-index: 99;
+            border: 1px solid;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+        <input type="file" id="documento1"><br>
+        <button id="abrirPDF">Abrir PDF</button>
+    </div>
+
+
+    <video id="player" controls autoplay></video>
+    <div id="contenedor">
+
+        <canvas width="320" height="240" id="canvas"></canvas>
+        <div id="cuadradito"></div>
+
+    </div>
+    <button id="capture">Capture</button>
+</body>
+</html>
