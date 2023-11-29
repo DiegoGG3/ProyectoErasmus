@@ -26,14 +26,6 @@ class NivelIdiomas {
     public function setNivel($nivel) {
         $this->nivel = $nivel;
     }
-
-    public function getIdioma() {
-        return $this->idioma;
-    }
-
-    public function setIdioma($idioma) {
-        $this->idioma = $idioma;
-    }
 }
 
 ?>
