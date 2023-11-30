@@ -2,8 +2,8 @@
 
 $conexion = DB::abreConexion();
 
-$proyectos = DB::selectUniversal($conexion, 'proyecto');
 $items = DB::selectUniversal($conexion, 'itemBaremable');
+$proyectos = DB::selectUniversal($conexion, 'proyecto');
 
 
 ?>
@@ -16,6 +16,7 @@ $items = DB::selectUniversal($conexion, 'itemBaremable');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Convocatoria</title>
     <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/formularioConvocatoria.js"></script>
 
 </head>
 
@@ -23,7 +24,7 @@ $items = DB::selectUniversal($conexion, 'itemBaremable');
 
     <h2>Formulario de Convocatoria</h2>
 
-    <form action="procesar_convocatoria.php" method="post">
+    <form action="./vistas/procesar_convocatoria.php" method="post">
         <label for="movilidades">Número de Movilidades:</label>
         <input type="number" id="movilidades" name="movilidades" required><br>
 
@@ -61,7 +62,7 @@ $items = DB::selectUniversal($conexion, 'itemBaremable');
         <input type="text" id="destino" name="destino" required><br>
 
 
-        <table border="2">
+        <table border="2" id="tablaItem">
             <tr>
                 <th>Seleccionar</th>
                 <th>ID Item</th>
@@ -72,18 +73,44 @@ $items = DB::selectUniversal($conexion, 'itemBaremable');
                 <th>Es presentado por el usuario</th>
 
             </tr>
-            <?php foreach ($items as $item): ?>
+            <?php 
+            $i=1;
+            foreach ($items as $item): ?>
                 <tr>
-                    <td><input type="checkbox"></td>
+
+                    <td><input type="checkbox" onclick="desactivarEdicion(this)"></td>
                     <td id="<?php echo ($item->getIdItem()); ?>"><?php echo $item->getIdItem(); ?></td>
                     <td id="<?php echo ($item->getNombre()); ?>"><?php echo $item->getNombre(); ?></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><input type="number" disabled name="max<?php echo $i; ?>"></td>
+                    <td><input type="number" disabled name="min<?php echo $i; ?>"></td>
+                    <td><input type="checkbox" disabled name="obligatorio<?php echo $i; ?>"></td>
+                    <td>Si<input type="checkbox" disabled name="aportado<?php echo $i; ?>"></td>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+            <?php 
+            $i++;
+            endforeach; ?>
+        </table><br>
+        <div class="tablaAdicional" id="tablaAdicional2">
+        <table border="1">
+            <tr>
+                <th>A1</th>
+                <th>A2</th>
+                <th>B1</th>
+                <th>B2</th>
+                <th>C1</th>
+                <th>C2</th>
+            </tr>
+            <tr>
+            <td><input type="number"  name="A1"></td>
+            <td><input type="number"  name="A2"></td>
+            <td><input type="number"  name="B1"></td>
+            <td><input type="number"  name="B2"></td>
+            <td><input type="number"  name="C1"></td>
+            <td><input type="number"  name="C2"></td>
+
+            </tr>
+        </table><br>
+    </div>
         <input type="submit" value="Enviar">
 
 

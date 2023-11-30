@@ -19,16 +19,16 @@ class convocatoriaRepository {
         $preparedConexion = $conexion->prepare("INSERT INTO Convocatoria (idConvocatoria, movilidades, tipo, fechaInicioSolicitud, fechaFinSolicitud, fechaInicioPrueba, fechaFinPrueba, fechaListadoProvisional, fechaListadoDefinitivo, idProyecto, destino)
         VALUES (NULL, :movilidades, :tipo, :fechaInicioSolicitud, :fechaFinSolicitud, :fechaInicioPrueba, :fechaFinPrueba, :fechaListadoProvisional, :fechaListadoDefinitivo, :idProyecto, :destino)");
 
-        $movilidades = $convocatoria->get_movilidades();
-        $tipo = $convocatoria->get_tipo();
-        $fechaInicioSolicitud = $convocatoria->get_fechaInicioSolicitud();
-        $fechaFinSolicitud = $convocatoria->get_fechaFinSolicitud();
-        $fechaInicioPrueba = $convocatoria->get_fechaInicioPrueba();
-        $fechaFinPrueba = $convocatoria->get_fechaFinPrueba();
-        $fechaListadoProvisional = $convocatoria->get_fechaListadoProvisional();
-        $fechaListadoDefinitivo = $convocatoria->get_fechaListadoDefinitivo();
-        $idProyecto = $convocatoria->get_idProyecto();
-        $destino = $convocatoria->get_destino();
+        $movilidades = $convocatoria->getMovilidades();
+        $tipo = $convocatoria->getTipo();
+        $fechaInicioSolicitud = $convocatoria->getFechaInicioSolicitud();
+        $fechaFinSolicitud = $convocatoria->getFechaFinSolicitud();
+        $fechaInicioPrueba = $convocatoria->getFechaInicioPrueba();
+        $fechaFinPrueba = $convocatoria->getFechaFinPrueba();
+        $fechaListadoProvisional = $convocatoria->getFechaListadoProvisional();
+        $fechaListadoDefinitivo = $convocatoria->getFechaListadoDefinitivo();
+        $idProyecto = $convocatoria->getIdProyecto();
+        $destino = $convocatoria->getDestino();
 
         $preparedConexion->bindParam(':movilidades', $movilidades);
         $preparedConexion->bindParam(':tipo', $tipo);

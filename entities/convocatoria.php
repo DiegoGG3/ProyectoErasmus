@@ -13,7 +13,8 @@ class Convocatoria {
     private $idProyecto;
     private $destino;
 
-    public function __construct($movilidades, $tipo, $fechaInicioSolicitud, $fechaFinSolicitud, $fechaInicioPrueba, $fechaFinPrueba, $fechaListadoProvisional, $fechaListadoDefinitivo, $idProyecto, $destino) {
+    public function __construct($idConvocatoria,$movilidades, $tipo, $fechaInicioSolicitud, $fechaFinSolicitud, $fechaInicioPrueba, $fechaFinPrueba, $fechaListadoProvisional, $fechaListadoDefinitivo, $idProyecto, $destino) {
+        $this->idConvocatoria = $idConvocatoria;
         $this->movilidades = $movilidades;
         $this->tipo = $tipo;
         $this->fechaInicioSolicitud = $fechaInicioSolicitud;

@@ -1,5 +1,6 @@
 <?php
 class itemBaremableRepository{
+    
     public static function crearItemBaremable($idItem, $nombre) {
         $itemBaremable = new ItemBaremable($idItem, $nombre);
         return $itemBaremable;
