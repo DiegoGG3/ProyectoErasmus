@@ -3,12 +3,12 @@
     spl_autoload_register('autocargar');
 
     function autocargar($clase){
-        $entities=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/entities/".$clase.'.php';
-        $repository=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/repository/".$clase.'.php';
-        $validacion=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/helper/".$clase.'.php';
-        $interfaz=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/interfaz/".$clase.'.php';
-        $css=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/css/".$clase.'.php';
-        $principal=$_SERVER['DOCUMENT_ROOT']."/PrimerProyecto/Principal/".$clase.'.php';
+        $entities=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/entities/".$clase.'.php';
+        $repository=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/repository/".$clase.'.php';
+        $validacion=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/helper/".$clase.'.php';
+        $interfaz=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/interfaz/".$clase.'.php';
+        $css=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/css/".$clase.'.php';
+        $principal=$_SERVER['DOCUMENT_ROOT']."/proyectoErasmus/Principal/".$clase.'.php';
 
 
 

@@ -10,7 +10,7 @@ h2 {
 }
 
 form {
-    max-width: 400px;
+    max-width: 600px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -24,7 +24,8 @@ label {
     color: #333;
 }
 
-input {
+input,
+select {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;

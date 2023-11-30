@@ -22,9 +22,13 @@ class DB{
         }
 
         switch ($tabla) {
-            case "noticias":
-                return noticiaRepository::arrayNoticia($objetos);
+            case "itemBaremable":
+                return itemBaremableRepository::arrayItemBaremables($objetos);
                 break;
+            case "proyecto":
+                return proyectoRepository::arrayProyecto($objetos);
+                break;
+            
         }
     }
 }
