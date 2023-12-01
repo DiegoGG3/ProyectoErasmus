@@ -5,7 +5,8 @@ function desactivarEdicion(checkbox) {
     var fila = checkbox.parentNode.parentNode;
     var inputs = fila.getElementsByTagName('input'); 
     for (var i = 1; i < inputs.length; i++) {
-        inputs[i].disabled = !checkbox.checked;
+            inputs[i].disabled = !checkbox.checked;
+            inputs[1].disabled = true;
     }
 }
 

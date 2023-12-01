@@ -7,14 +7,16 @@ class ConvocatoriaBaremo {
     private $requisito;
     private $valorMin;
     private $valorMax;
+    private $presentaUser;
 
-    public function __construct($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $valorMin, $valorMax) {
+    public function __construct($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $valorMin, $valorMax, $presentaUser) {
         $this->idConvocatoriaBaremo = $idConvocatoriaBaremo;
         $this->idConvocatoria = $idConvocatoria;
         $this->idBaremo = $idBaremo;
         $this->requisito = $requisito;
         $this->valorMin = $valorMin;
         $this->valorMax = $valorMax;
+        $this->presentaUser= $presentaUser;
     }
 
     public function getIdConvocatoriaBaremo() {
@@ -64,6 +66,15 @@ class ConvocatoriaBaremo {
     public function setValorMax($valorMax) {
         $this->valorMax = $valorMax;
     }
+    
+    public function getPresentaUser() {
+        return $this->presentaUser;
+    }
+
+    public function setPresentaUser($presentaUser) {
+        $this->presentaUser = $presentaUser;
+    }
+
 }
 
 ?>

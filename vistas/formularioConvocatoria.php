@@ -79,7 +79,7 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
                 <tr>
 
                     <td><input type="checkbox" onclick="desactivarEdicion(this)"></td>
-                    <td id="<?php echo ($item->getIdItem()); ?>"><?php echo $item->getIdItem(); ?></td>
+                    <td name="<?php echo ($item->getIdItem()); ?>"><input type="number" disabled name="idBaremo" value="<?php echo $item->getIdItem(); ?>"></td>
                     <td id="<?php echo ($item->getNombre()); ?>"><?php echo $item->getNombre(); ?></td>
                     <td><input type="number" disabled name="max<?php echo $i; ?>"></td>
                     <td><input type="number" disabled name="min<?php echo $i; ?>"></td>
