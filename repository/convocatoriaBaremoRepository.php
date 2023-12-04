@@ -2,7 +2,7 @@
 class convocatoriaBaremoRepository{
     
     public static function crearConvocatoriaBaremo($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $VALOR_MIN, $VALOR_MAX, $presentaUser) {
-        $convocatoria = new ConvocatoriaBaremo($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $VALOR_MIN, $VALOR_MAX, $presentaUser);
+        $convocatoria = new convocatoriaBaremo($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $VALOR_MIN, $VALOR_MAX, $presentaUser);
         return $convocatoria;
     }
 
