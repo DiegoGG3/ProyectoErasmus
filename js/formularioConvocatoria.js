@@ -1,6 +1,9 @@
+var boton = document.getElementById("enviar");
+
 function desactivarEdicion(checkbox) {
+
     if(checkbox.parentNode.parentNode.childNodes[3].id==2){
-        mostrarTabla(checkbox)
+        mostrarTabla(checkbox);
     }
     var fila = checkbox.parentNode.parentNode;
     var inputs = fila.getElementsByTagName('input'); 
@@ -17,5 +20,17 @@ function mostrarTabla(checkbox) {
         tablaAdicional.style.display = 'block';
     } else {
         tablaAdicional.style.display = 'none';
+    }
+}
+
+boton.onclick = function () {
+    activarId();
+}
+
+function activarId(){
+   var ids= document.getElementsByClassName("id");
+    for (let i = 0; i < ids.length; i++) {
+        checkbox=document.getElementById("seleccionar"+(i+1));
+        ids[i].firstChild.disabled = !checkbox.checked ;
     }
 }

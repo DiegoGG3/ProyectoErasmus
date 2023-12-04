@@ -8,17 +8,15 @@ class convocatoriaBaremoRepository{
 
     public static function añadirConvocatoria($conexion, $convocatoriaBaremo) {
         $preparedConexion = $conexion->prepare("INSERT INTO convocatoriaBaremo (idConvocatoriaBaremo, idConvocatoria, idBaremo, requisito, VALOR_MIN, VALOR_MAX, presentaUser)
-        VALUES (NULL, :idConvocatoriaBaremo, :idConvocatoria, :idBaremo, :requisito, :VALOR_MIN, :VALOR_MAX, :presentaUser)");
+        VALUES (NULL, :idConvocatoria, :idBaremo, :requisito, :VALOR_MIN, :VALOR_MAX, :presentaUser)");
 
-        $idConvocatoriaBaremo = $convocatoriaBaremo->getIdConvocatoriaBaremo();
         $idConvocatoria = $convocatoriaBaremo->getIdConvocatoria();
         $idBaremo = $convocatoriaBaremo->getIdBaremo();
         $requisito = $convocatoriaBaremo->getRequisito();
-        $VALOR_MIN = $convocatoriaBaremo->getValotMin();
+        $VALOR_MIN = $convocatoriaBaremo->getValorMin();
         $VALOR_MAX = $convocatoriaBaremo->getValorMax();
         $presentaUser = $convocatoriaBaremo->getPresentaUser();
 
-        $preparedConexion->bindParam(':idConvocatoriaBaremo', $idConvocatoriaBaremo);
         $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
         $preparedConexion->bindParam(':idBaremo', $idBaremo);
         $preparedConexion->bindParam(':requisito', $requisito);

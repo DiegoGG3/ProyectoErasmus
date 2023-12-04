@@ -16,7 +16,6 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Convocatoria</title>
     <link rel="stylesheet" href="./css/estilo.css">
-    <script src="./js/formularioConvocatoria.js"></script>
 
 </head>
 
@@ -78,8 +77,8 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
             foreach ($items as $item): ?>
                 <tr>
 
-                    <td><input type="checkbox" onclick="desactivarEdicion(this)"></td>
-                    <td name="<?php echo ($item->getIdItem()); ?>"><input type="number" disabled name="idBaremo" value="<?php echo $item->getIdItem(); ?>"></td>
+                    <td><input type="checkbox" onclick="desactivarEdicion(this)" id="seleccionar<?php echo $i; ?>"></td>
+                    <td class="id" id="<?php echo ($item->getIdItem()); ?>" name="<?php echo ($item->getIdItem()); ?>"><input type="number" disabled name="idBaremo<?php echo $i; ?>" value="<?php echo $item->getIdItem(); ?>"></td>
                     <td id="<?php echo ($item->getNombre()); ?>"><?php echo $item->getNombre(); ?></td>
                     <td><input type="number" disabled name="max<?php echo $i; ?>"></td>
                     <td><input type="number" disabled name="min<?php echo $i; ?>"></td>
@@ -111,11 +110,12 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
             </tr>
         </table><br>
     </div>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" id="enviar">
 
 
     </form>
 
 </body>
+<script src="./js/formularioConvocatoria.js"></script>
 
 </html>
