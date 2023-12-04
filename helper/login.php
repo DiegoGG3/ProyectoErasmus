@@ -6,6 +6,9 @@ $conexion = DB::abreConexion();
 class Login
 {
     private $usuarioLogueado = false;
+    private $repository;
+    private $conexion;
+    private $arrayDeUser;
 
     public function __construct($repository, $conexion)
     {

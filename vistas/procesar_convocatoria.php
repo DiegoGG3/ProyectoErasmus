@@ -59,6 +59,14 @@ try {
             convocatoriaBaremoRepository::añadirConvocatoria($conexion, $convocatoriaBaremo);
         }
     }
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"A1",$_POST["A1"]));
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"A2",$_POST["A2"]));
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"B1",$_POST["B1"]));
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"B2",$_POST["B2"]));
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"C1",$_POST["C1"]));
+    IdiomaBaremoRepository::añadirIdiomaBaremo($conexion,IdiomaBaremoRepository::crearIdiomaBaremo("",$idConvocatoia,"C2",$_POST["C2"]));
+
+
     $conexion->commit();
 } catch (Exception $e) {
     $conexion->rollback();
