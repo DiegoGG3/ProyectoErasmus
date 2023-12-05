@@ -21,9 +21,10 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
 
 <body>
 
-    <h2>Formulario de Convocatoria</h2>
 
     <form action="./vistas/procesar_convocatoria.php" method="post">
+    <h2>Formulario de Convocatoria</h2>
+
         <label for="movilidades">Número de Movilidades:</label>
         <input type="number" id="movilidades" name="movilidades" required><br>
 
