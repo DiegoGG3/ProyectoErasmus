@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proyecto Erasmus</title>
     <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./css/modal.css">
+
 
 </head>
 

@@ -2,7 +2,7 @@
 $conexion = DB::abreConexion();
 
 $convocatorias = DB::selectUniversal($conexion, 'convocatoria');
-$destinatario = DB::selectUniversal($conexion, 'destinatario');
+$destinatarios = DB::selectUniversal($conexion, 'destinatario');
 
 
 ?>
@@ -28,10 +28,38 @@ $destinatario = DB::selectUniversal($conexion, 'destinatario');
             <td><?php echo htmlspecialchars($convocatoria->getTipo()); ?></td>
             <td><?php echo htmlspecialchars($convocatoria->getDestino()); ?></td>
             <td>
-               <button class="eliminar">Asignar clases</button>
+            <button class="asignar" onclick="openModal()">Asignar clases</button>
             </td>
         </tr>
         <?php endforeach; ?>
     </table>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Asignar Clases</h2>
+            <table border=1>
+        <tr>
+            <th>Siglas</th>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+        <?php foreach ($destinatarios as $destinatario): 
+            ?>
+        <tr>
+            <td><?php echo htmlspecialchars($destinatario->getCodigoGrupo()); ?></td>
+            <td><?php echo htmlspecialchars($destinatario->getNombre()); ?></td>
+            <td>
+                <input type="checkbox">
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+            <button onclick="closeModal()">Cerrar</button>
+            <button>Guardar</button>
+        </div>
+    </div>
 </body>
+<script src="./js/asignaConvocatoria.js"></script>
+
 </html>
