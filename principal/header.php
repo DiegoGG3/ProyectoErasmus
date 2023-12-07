@@ -14,10 +14,6 @@
                 case "ALUMNO":
                     require_once 'headerAlumno.php';
                     break;
-                    
-                case "PROFESOR":
-                    require_once 'headerProfe.php';
-                    break;
                 }
             }
         ?>
