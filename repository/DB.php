@@ -38,6 +38,9 @@ class DB
             case "convocatoria":
                 return convocatoriaRepository::arrayConvocatorias($objetos);
                 break;
+            case "destinatarioconvocatoria":
+                return destinatarioConvocatoriaRepository::arrayDestinatarioConvocatoria($objetos);
+                break;
         }
     }
 }

@@ -4,6 +4,8 @@
 <div id="cuerpo">
 
 <?php
+    require_once './vistas/landinPage.php';
+
 if (isset($_GET['menu'])) {
     if ($_GET['menu'] == "CreaConvocatoria") {
         require_once './vistas/formularioConvocatoria.php';
@@ -14,7 +16,8 @@ if (isset($_GET['menu'])) {
     if ($_GET['menu'] == "asignaConvocatoria") {
         require_once './vistas/asignaConvocatoria.php';     
     }
-
+else{
+}
 }
 ?>
 </div>
