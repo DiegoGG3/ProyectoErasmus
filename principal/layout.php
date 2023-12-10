@@ -13,7 +13,7 @@
 </head>
 
 <body id='paginaPrincipal'>
-    <?php require_once './Principal/headerAdmin.php'; ?>
+    <?php require_once './Principal/headerNoLog.php'; ?>
     <?php require_once './Principal/enruta.php'; ?>
     <?php require_once './Principal/footer.php'; ?>
 </body>
