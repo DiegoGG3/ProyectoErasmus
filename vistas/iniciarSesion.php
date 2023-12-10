@@ -1,6 +1,8 @@
 <?php  
 $conexion = DB::abreConexion();
 $valida=new Validacion();
+$repository = new DB();
+
 $login = new Login($repository,$conexion);
 
 

@@ -1,8 +1,6 @@
 <?php
 require_once "../helper/autocargar.php";
 $conexion = DB::abreConexion();
-
-var_dump($_POST);
 $convocatoria = convocatoriaRepository::crearConvocatoria(
     "",
     $_POST["movilidades"],

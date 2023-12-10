@@ -9,12 +9,16 @@ class Login
     private $repository;
     private $conexion;
     private $arrayDeUser;
+    private $arrayDeAdmin;
+
 
     public function __construct($repository, $conexion)
     {
         $this->repository = $repository;
         $this->conexion = $conexion;
-        $this->arrayDeUser = $this->repository->selectUniversal($this->conexion, 'User');
+        $this->arrayDeUser = $this->repository->selectUniversal($this->conexion, 'candidatos');
+        $this->arrayDeAdmin = $this->repository->selectUniversal($this->conexion, 'administrador');
+
     }
 
     public function Identifica($usuario, $contrasena)
@@ -36,7 +40,12 @@ class Login
 
     public function ExisteUsuario($usuario, $contrasena) {
         foreach ($this->arrayDeUser as $user) {
-            if ($user->get_Nombre() === $usuario && $user->get_Contraseña() === $contrasena) {
+            if ($user->getDniCandidato() === $usuario && $user->setContraseñaCandidato() === $contrasena) {
+                return $user;
+            }
+        }
+        foreach ($this->arrayDeAdmin as $user) {
+            if ($user->getDniAdministrador() === $usuario && $user->getContraseñaAdministrador() === $contrasena) {
                 return $user;
             }
         }

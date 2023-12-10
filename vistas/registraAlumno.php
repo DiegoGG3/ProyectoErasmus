@@ -1,3 +1,10 @@
+<?php
+$conexion = DB::abreConexion();
+
+$destinatarios = DB::selectUniversal($conexion, 'destinatario');
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +14,7 @@
 </head>
 <body>
     <h2>Formulario de Registro de Candidato</h2>
-    <form action="procesar_registro.php" method="post">
+    <form action="./vistas/procesarAlumno.php" method="post">
         <label for="dniCandidato">DNI del Candidato:</label>
         <input type="text" id="dniCandidato" name="dniCandidato" required>
 
@@ -28,9 +35,10 @@
 
         <label for="curso">Curso:</label>
         <select id="curso" name="curso" required>
-            <option value="curso1">Curso 1</option>
-            <option value="curso2">Curso 2</option>
-            <option value="curso3">Curso 3</option>
+        <?php foreach ($destinatarios as $destinatario) :?>
+            <option value="<?php echo ($destinatario->getCodigoGrupo()); ?>"><?php echo strtoupper($destinatario->getNombre()); ?></option>
+        <?php endforeach; ?>
+
         </select>
 
         <label for="telefonoCandidato">Teléfono:</label>
@@ -43,14 +51,20 @@
         <input type="text" id="domicilioCandidato" name="domicilioCandidato" required>
 
         <label for="contraseñaCandidato">Contraseña:</label>
-        <input type="password" id="contraseñaCandidato" name="contraseñaCandidato" required>
+        <div>
+            <input type="password" id="contraseñaCandidato" name="contraseñaCandidato" required>
+            <button type="button" onclick="mostrarContraseña()">Mostrar</button>
+        </div>
 
         <label for="repetirContraseña">Repetir Contraseña:</label>
-        <input type="password" id="repetirContraseña" name="repetirContraseña" required oninput="validarContraseñas()">
+        <div>
+            <input type="password" id="repetirContraseña" name="repetirContraseña" required oninput="validarContraseñas()">
+            <button type="button" onclick="mostrarRepetirContraseña()">Mostrar</button>
+        </div>
 
         <p id="mensajeErrorContraseña" style="color: red;"></p>
 
-        <button type="submit">Registrar</button>
+        <button type="submit" id="boton">Registrar</button>
     </form>
 </body>
 <script src="./js/registraAlumno.js" defer></script>

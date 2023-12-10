@@ -41,6 +41,12 @@ class DB
             case "destinatarioconvocatoria":
                 return destinatarioConvocatoriaRepository::arrayDestinatarioConvocatoria($objetos);
                 break;
+            case "candidatos":
+                return candidatoRepository::arrayCandidatos($objetos);
+                break;
+            case "administrador":
+                return administradorRepository::arrayAdministrador($objetos);
+                break;
         }
     }
 }
