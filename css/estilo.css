@@ -10,7 +10,7 @@ h2 {
 }
 
 form {
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -81,20 +81,17 @@ footer {
     bottom: 0;
     width: 100%;
 }
-/* Reset de estilos para quitar márgenes y paddings predeterminados */
 body, h1, h2, p, table {
     margin: 0;
     padding: 0;
   }
   
-  /* Establecer un fondo oscuro para todo el cuerpo */
   body {
     background-color: #1a1a1a;
     color: #fff; /* Texto en color blanco */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  /* Estilos de la tabla */
   table {
     width: 90%;
     border-collapse: collapse;
@@ -102,7 +99,6 @@ body, h1, h2, p, table {
     background-color: #333;
   }
   
-  /* Estilos para las celdas de encabezado */
   th {
     background-color: #555;
     color: #fff;
@@ -110,18 +106,15 @@ body, h1, h2, p, table {
     text-align: left;
   }
   
-  /* Estilos para las celdas de datos alternas */
   tr:nth-child(even) {
     background-color: #444;
   }
   
-  /* Estilos para las celdas de datos */
   td {
     padding: 12px;
     border-bottom: 1px solid #2c2c2c;
   }
   
-  /* Estilo hover para resaltar filas al pasar el ratón */
   tr:hover {
     background-color: #666;
   }

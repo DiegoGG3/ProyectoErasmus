@@ -40,6 +40,18 @@ class destinatarioConvocatoriaRepository{
         return destinatarioConvocatoriaRepository::arrayDestinatarioConvocatoria($destinatariosConvocatoria);
     }
 
+    public static function obtenerConvocatoriaPorId($conexion, $idDestinatario) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM destinatarioConvocatoria WHERE idDestinatario= :idDestinatario");
+        $preparedConexion->bindParam(':idDestinatario', $idDestinatario);
+
+        $preparedConexion->execute();
+        $destinatariosConvocatoria = array();
+
+        $destinatariosConvocatoria = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return destinatarioConvocatoriaRepository::arrayDestinatarioConvocatoria($destinatariosConvocatoria);
+    }
+
 }
 
 ?>

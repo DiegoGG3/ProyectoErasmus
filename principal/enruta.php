@@ -14,6 +14,8 @@ if (isset($_GET['menu'])) {
         require_once './vistas/asignaConvocatoria.php';
     } elseif ($_GET['menu'] == "Registro") {
         require_once './vistas/registraAlumno.php';
+    } elseif ($_GET['menu'] == "listaConvocatoria") {
+        require_once './vistas/listaConvocatoria.php';
     }
 } else {
     require_once './vistas/landinPage.php';

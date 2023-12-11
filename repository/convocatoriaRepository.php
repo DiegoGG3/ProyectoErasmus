@@ -51,6 +51,18 @@ class convocatoriaRepository {
 
         $preparedConexion->execute();
     }
+
+    public static function obtenerConvocatoriaPorId($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM convocatoria WHERE idConvocatoria= :idConvocatoria");
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+
+        $preparedConexion->execute();
+        $destinatariosConvocatoria = array();
+
+        $destinatariosConvocatoria = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return convocatoriaRepository::arrayConvocatorias($destinatariosConvocatoria);
+    }
     
     
 }
