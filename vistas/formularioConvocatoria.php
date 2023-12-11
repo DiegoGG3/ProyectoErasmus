@@ -21,7 +21,7 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
 <body>
 
 
-    <form action="./vistas/procesar_convocatoria.php" method="post">
+    <form action="./api/procesar_convocatoria.php" method="post">
     <h2>Formulario de Convocatoria</h2>
 
         <label for="movilidades">Número de Movilidades:</label>

@@ -14,7 +14,7 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
 </head>
 <body>
     <h2>Formulario de Registro de Candidato</h2>
-    <form action="./vistas/procesarAlumno.php" method="post">
+    <form action="./api/procesarAlumno.php" method="post">
         <label for="dniCandidato">DNI del Candidato:</label>
         <input type="text" id="dniCandidato" name="dniCandidato" required>
 
