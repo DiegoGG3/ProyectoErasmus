@@ -6,14 +6,11 @@
             if(!loginRepository::estaLog()){
                 require_once 'headerNoLog.php';
             }else{
-                switch (strtoupper(loginRepository::comprobar("user")->get_Rol())) {
-                case "ADMIN":
+                $a=$_SESSION['user'];
+                if (strtoupper(loginRepository::comprobar("user")->getCurso())==null) {
                     require_once 'headerAdmin.php';
-                    break;
-
-                case "ALUMNO":
-                    require_once 'headerAlumno.php';
-                    break;
+                }else{
+                    require_once 'headerCandidato.php';
                 }
             }
         ?>

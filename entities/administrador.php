@@ -27,6 +27,10 @@ class Administrador {
         return $this->dniAdministrador;
     }
 
+    public function getCurso() {
+        return null;
+    }
+
     public function setDniAdministrador($dniAdministrador) {
         $this->dniAdministrador = $dniAdministrador;
     }

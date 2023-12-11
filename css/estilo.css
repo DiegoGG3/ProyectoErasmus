@@ -81,39 +81,48 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-/* Estilos generales de la tabla */
-table {
-    width: 100%;
+/* Reset de estilos para quitar márgenes y paddings predeterminados */
+body, h1, h2, p, table {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Establecer un fondo oscuro para todo el cuerpo */
+  body {
+    background-color: #1a1a1a;
+    color: #fff; /* Texto en color blanco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Estilos de la tabla */
+  table {
+    width: 90%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para el encabezado de la tabla */
-th {
-    background-color: #3498db;
+    margin: 20px 0;
+    background-color: #333;
+  }
+  
+  /* Estilos para las celdas de encabezado */
+  th {
+    background-color: #555;
     color: #fff;
-    padding: 15px;
-    text-align: left;
-}
-
-/* Estilos para las celdas de la tabla */
-td {
-    background-color: #ecf0f1;
-    color: #333;
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #bdc3c7;
-}
-
-/* Estilos alternativos para filas */
-tr:nth-child(even) {
-    background-color: #d2d6de;
-}
-
-/* Estilos para el resaltado al pasar el mouse sobre la fila */
-tr:hover {
-    background-color: #bdc3c7;
-    transition: background-color 0.3s;
-}
+  }
+  
+  /* Estilos para las celdas de datos alternas */
+  tr:nth-child(even) {
+    background-color: #444;
+  }
+  
+  /* Estilos para las celdas de datos */
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #2c2c2c;
+  }
+  
+  /* Estilo hover para resaltar filas al pasar el ratón */
+  tr:hover {
+    background-color: #666;
+  }
+  

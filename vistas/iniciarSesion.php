@@ -41,7 +41,7 @@ if (isset($_POST['login'])) {
             <h2 id='titulo'>Iniciar Sesión</h2>
         <form method='post' id='formInicio'>
             <div class='input-container'>
-                <label for='username' class='labelInicio'>Nombre de usuario</label>
+                <label for='username' class='labelInicio'>DNI de usuario</label>
                 <input type='text' id='username' name='username' required class='inputInicio'>
             </div>
             <div class='input-container'>
@@ -49,8 +49,8 @@ if (isset($_POST['login'])) {
                 <input type='password' id='password' name='password' required class='inputInicio'>
             </div>
             <button type='submit' name='login' id='botonInicio'>Iniciar Sesión</button><br>
-        </form>
             <a href='?menu=Registro' id='aInicio'>Regístrate</a>
+        </form>
     
         </div>
     </body>

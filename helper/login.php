@@ -26,13 +26,12 @@ class Login
         $user=$this->ExisteUsuario($usuario, $contrasena);
         if ($user==null) {
             echo "Error: Usuario o contraseña incorrectos.";
-
-            
         } else {
+            
             $this->usuarioLogueado = true;
 
             loginRepository::login($user);
-            // header("location: ./index.php");
+            header("location: ./index.php");
 
         }
     }
@@ -40,7 +39,7 @@ class Login
 
     public function ExisteUsuario($usuario, $contrasena) {
         foreach ($this->arrayDeUser as $user) {
-            if ($user->getDniCandidato() === $usuario && $user->setContraseñaCandidato() === $contrasena) {
+            if ($user->getDniCandidato() === $usuario && $user->getContraseñaCandidato() === $contrasena) {
                 return $user;
             }
         }

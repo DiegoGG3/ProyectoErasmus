@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos - Instituto</title>
-    <link rel="stylesheet" type="text/css" href="./css/landin.css">
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
 
 </head>
 <body>
@@ -18,12 +18,6 @@
     <header>
         <h1>IES Fuentezuelas</h1>
     </header>
-
-    <section id="quienes-somos">
-        <h2>Quiénes Somos</h2>
-        <p>Breve descripción sobre el instituto y sus actividades.</p>
-    </section>
-
     <section id="convocatorias">
         <h2>Convocatorias</h2>
        
