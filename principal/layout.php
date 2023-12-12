@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Proyecto Erasmus</title>
-    <link rel="stylesheet" type="text/css" href="./css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="./css/modal.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="./css/modal.css"> -->
 
 
 </head>

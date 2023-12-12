@@ -88,7 +88,7 @@ body, h1, h2, p, table {
   
   body {
     background-color: #1a1a1a;
-    color: #fff; /* Texto en color blanco */
+    color: #2f2e2e; /* Texto en color blanco */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
@@ -118,6 +118,7 @@ body, h1, h2, p, table {
   tr:hover {
     background-color: #666;
   }
+  
   #contenedorFoto{
     display: none;
   }

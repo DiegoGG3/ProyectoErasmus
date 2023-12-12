@@ -4,6 +4,7 @@ $conexion = DB::abreConexion();
 
 $items = DB::selectUniversal($conexion, 'itemBaremable');
 $proyectos = DB::selectUniversal($conexion, 'proyecto');
+$clases = DB::selectUniversal($conexion, 'destinatario');
 
 
 ?>
@@ -60,6 +61,11 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
         <label for="destino">Destino de la Convocatoria:</label>
         <input type="text" id="destino" name="destino" required><br>
 
+        <label>Clases:</label>
+        <?php foreach ($clases as $clase) : ?>
+            <input type="checkbox" id="<?php echo ($clase->getCodigoGrupo()); ?>" name="<?php echo ($clase->getCodigoGrupo()); ?>"><?php echo ($clase->getNombre()); ?>
+        <?php endforeach; ?>
+
 
         <table border="2" id="tablaItem">
             <tr>
@@ -76,7 +82,6 @@ $proyectos = DB::selectUniversal($conexion, 'proyecto');
             $i=1;
             foreach ($items as $item): ?>
                 <tr>
-
                     <td><input type="checkbox" onclick="desactivarEdicion(this)" id="seleccionar<?php echo $i; ?>"></td>
                     <td class="id" id="<?php echo ($item->getIdItem()); ?>" name="<?php echo ($item->getIdItem()); ?>"><input type="number" disabled name="idBaremo<?php echo $i; ?>" value="<?php echo $item->getIdItem(); ?>"></td>
                     <td id="<?php echo ($item->getNombre()); ?>"><?php echo $item->getNombre(); ?></td>
