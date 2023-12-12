@@ -47,6 +47,9 @@ class DB
             case "administrador":
                 return administradorRepository::arrayAdministrador($objetos);
                 break;
+            case "solicitud":
+                return SolicitudRepository::arraySolicitudes($objetos);
+                break;
         }
     }
 }

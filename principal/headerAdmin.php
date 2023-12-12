@@ -20,6 +20,9 @@ if(isset($_GET['operacion']) && $_GET['operacion'] === 'CierraSesion'){
                     <a href="?menu=asignaConvocatoria">Asignar Convocatoria<span class="oculto"></span></a>
                 </li>
                 <li class="enlace">
+                    <a href="?menu=gestionarSolicitudes">Gestiona Solicitudes<span class="oculto"></span></a>
+                </li>
+                <li class="enlace">
                     <a href="?operacion=CierraSesion">Cerrar Sesión<span class="oculto"></span></a>
                 </li>
             </ul>

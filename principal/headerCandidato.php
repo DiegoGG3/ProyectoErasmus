@@ -17,7 +17,7 @@ if(isset($_GET['operacion']) && $_GET['operacion'] === 'CierraSesion'){
                     <a href="?menu=listaConvocatoria">Lista Convocatoria<span class="oculto"></span></a>
                 </li>
                 <li class="enlace">
-                    <a href="?menu=asignaConvocatoria">Mis Convocatorias<span class="oculto"></span></a>
+                    <a href="?menu=misConvocatorias">Mis Convocatorias<span class="oculto"></span></a>
                 </li>
                 <li class="enlace">
                     <a href="?operacion=CierraSesion">Cerrar Sesión<span class="oculto"></span></a>

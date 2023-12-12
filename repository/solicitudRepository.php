@@ -3,7 +3,7 @@ class SolicitudRepository {
  
 
     public static function añadirSolicitud($conexion,$solicitud) {
-        $preparedConexion = $conexion->prepare("INSERT INTO solicitud (dniCandidato, idConvocatoria, destinatario, telefono, email, domicilio, foto) VALUES (:dniCandidato, :idConvocatoria, :destinatario, :telefono, :email, :domicilio, :foto)");
+        $preparedConexion = $conexion->prepare("INSERT INTO solicitud (dniCandidato, idConvocatoria, destinatario, telefono, email, domicilio, foto,estado) VALUES (:dniCandidato, :idConvocatoria, :destinatario, :telefono, :email, :domicilio, :foto, 'En Revisión')");
 
         $dni = $solicitud->getDniCandidato();
         $IdConvocatoria = $solicitud->getIdConvocatoria();
@@ -40,14 +40,26 @@ class SolicitudRepository {
         $arraySolicitudes = array();
 
         foreach ($objetos as $array) {
-            array_push($arraySolicitudes, SolicitudRepository::crearSolicitud($array->idSolicitud, $array->dniCandidato, $array->idConvocatoria, $array->destinatario, $array->telefono, $array->email, $array->domicilio, $array->foto));
+            array_push($arraySolicitudes, SolicitudRepository::crearSolicitud($array->idSolicitud, $array->dniCandidato, $array->idConvocatoria, $array->destinatario, $array->telefono, $array->email, $array->domicilio, $array->foto, $array->estado));
         }
 
         return $arraySolicitudes;
     }
 
-    public static function crearSolicitud($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio,$foto) {
-        return new Solicitud($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio, $foto);
+    public static function crearSolicitud($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio,$foto, $estado) {
+        return new Solicitud($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio, $foto, $estado);
+    }
+
+    public static function obtenerSolicitudId($conexion, $dniCandidato) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM solicitud WHERE dniCandidato= :dniCandidato");
+        $preparedConexion->bindParam(':dniCandidato', $dniCandidato);
+
+        $preparedConexion->execute();
+        $soliciudes = array();
+
+        $soliciudes = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return SolicitudRepository::arraySolicitudes($soliciudes);
     }
 }
 

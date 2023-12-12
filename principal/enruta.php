@@ -16,6 +16,10 @@ if (isset($_GET['menu'])) {
         require_once './vistas/registraAlumno.php';
     } elseif ($_GET['menu'] == "listaConvocatoria") {
         require_once './vistas/listaConvocatoria.php';
+    }elseif ($_GET['menu'] == "misConvocatorias") {
+        require_once './vistas/misConvocatorias.php';
+    }elseif ($_GET['menu'] == "gestionarSolicitudes") {
+        require_once './vistas/gestionarSolicitudes.php';
     }
 } else {
     require_once './vistas/landinPage.php';

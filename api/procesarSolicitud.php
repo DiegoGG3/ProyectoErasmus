@@ -14,7 +14,8 @@ $solicitud = solicitudRepository::crearSolicitud(
     $_POST["telefonoCandidato"],
     $_POST["correoCandidato"],
     $_POST["domicilioCandidato"],
-    $_POST["foto"]
+    $_POST["foto"],
+    ""
 
 );
 
