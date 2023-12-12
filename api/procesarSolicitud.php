@@ -1,6 +1,7 @@
 <?php
 
 require_once "../helper/autocargar.php";
+$A=($_POST);
 $conexion = DB::abreConexion();
 Sesion::iniciar();
 $dniCandidato = $_SESSION['user']->getDniCandidato();
@@ -12,7 +13,9 @@ $solicitud = solicitudRepository::crearSolicitud(
     $_POST["curso"],
     $_POST["telefonoCandidato"],
     $_POST["correoCandidato"],
-    $_POST["domicilioCandidato"]
+    $_POST["domicilioCandidato"],
+    $_POST["foto"]
+
 );
 
 try {

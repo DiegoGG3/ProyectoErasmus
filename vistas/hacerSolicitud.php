@@ -49,14 +49,9 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
             <input type="file" id="documentoNotas" name="documentoNotas">
             <button id="abrirPDF2">Abrir PDF</button><br>
     
-            <label for="foto">Hacer foto</label>
-            <button id="foto">Hacer foto</button><br>
-    
-            <div id="contenedorFoto">
-                <video id="player" controls autoplay></video>
-                <canvas width="320" height="240" id="canvas"></canvas>
-                <button id="capture" onclick="recortar()">Capture</button>
-            </div>
+            <img id="foton">
+            <input type="hidden" id="blob">
+            <button id="foto" onclick="modalFoto(event)">Hacer foto</button><br>
         </div>
 
         <button type="submit" id="botonSolicitar">Solicitar</button>
@@ -64,6 +59,8 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
 </body>
 <script src="../js/pdf.js" defer></script>
 <script src="../js/hacerSolicitud.js" defer></script>
+<script src="../js/foto.js" defer></script>
+
 
 
 </html>

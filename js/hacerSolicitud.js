@@ -8,6 +8,8 @@ window.addEventListener("load",function(){
     formulario.append("correoCandidato", document.getElementById("correoCandidato").value);
     formulario.append("domicilioCandidato", document.getElementById("domicilioCandidato").value);
     formulario.append("convocatoriaId", document.getElementById("convocatoriaId").value);
+    formulario.append("foto", document.getElementById("blob").value);
+
 
 
     var div=document.getElementById("divFiles");

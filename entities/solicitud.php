@@ -8,8 +8,9 @@ class Solicitud {
     private $telefono;
     private $email;
     private $domicilio;
+    private $foto;
 
-    public function __construct($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio) {
+    public function __construct($idSolicitud, $dniCandidato, $idConvocatoria, $destinatario, $telefono, $email, $domicilio, $foto) {
         $this->idSolicitud = $idSolicitud;
         $this->dniCandidato = $dniCandidato;
         $this->idConvocatoria = $idConvocatoria;
@@ -17,6 +18,8 @@ class Solicitud {
         $this->telefono = $telefono;
         $this->email = $email;
         $this->domicilio = $domicilio;
+        $this->foto = $foto;
+
     }
 
     public function getIdSolicitud() {
@@ -73,6 +76,14 @@ class Solicitud {
 
     public function setDomicilio($domicilio) {
         $this->domicilio = $domicilio;
+    }
+
+    public function getFoto() {
+        return $this->foto;
+    }
+
+    public function setFoto($foto) {
+        $this->foto = $foto;
     }
 }
 
