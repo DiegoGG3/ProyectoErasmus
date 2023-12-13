@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
                 <input type='password' id='password' name='password' required class='inputInicio'>
             </div>
             <button type='submit' name='login' id='botonInicio'>Iniciar Sesión</button><br>
-            <a href='?menu=Registro' id='aInicio'>Regístrate</a>
+            <a href='?menu=Registro' id='enlaceBoton'>Regístrate</a>
         </form>
     
         </div>

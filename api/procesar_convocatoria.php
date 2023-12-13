@@ -103,3 +103,5 @@ try {
     $conexion->rollback();
     print "Error!: No se pudo guardar la convocatoria</br>";
 }
+
+header("Location: ../index.php");

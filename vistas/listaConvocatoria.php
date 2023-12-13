@@ -3,8 +3,10 @@ $conexion = DB::abreConexion();
 $curso = $_SESSION['user']->getCurso();
 $convocatorias = destinatarioConvocatoriaRepository::obtenerConvocatoriaPorId($conexion, $curso);
 ?>
-<form method='post' id='formSolicitud' action="./vistas/hacerSolicitud.php">
+<form method='post' id='formSolicitud' action="index.php?menu=hacerSolicitud">
     <table border=1>
+    <h2>Convocatorias disponibles</h2>
+
         <tr>
             <th>Destino</th>
             <th>Tipo</th>

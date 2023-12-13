@@ -36,4 +36,7 @@ try {
     $conexion->rollback();
     print "Error!: No se pudo guardar la solicitud</br>";
 }
+
+header("Location: ../index.php");
+
 ?>

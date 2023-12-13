@@ -1,6 +1,6 @@
 <?php
 $conexion = DB::abreConexion();
-$convocatorias = DB::selectUniversal($conexion, 'convocatoria');
+$proyectos = DB::selectUniversal($conexion, 'proyecto');
 
 ?>
 
@@ -15,35 +15,25 @@ $convocatorias = DB::selectUniversal($conexion, 'convocatoria');
 </head>
 
 <body>
-
-    <header>
-        <h1>IES Fuentezuelas</h1>
-    </header>
     <section id="convocatorias">
-        <h2>Convocatorias</h2>
+        <h2>Proyectos disponibles</h2>
 
         <table border=1>
             <tr>
-                <th>Destino</th>
-                <th>Tipo</th>
-                <th>Clases De La Convocatoria</th>
+                <th>Nombre</th>
+                <th>Fecha de Inicio</th>
+                <th>Fecha Fin</th>
                 <th>Apuntate</th>
             </tr>
-            <?php foreach ($convocatorias as $convocatoria) :
-                $clases = destinatarioConvocatoriaRepository::obtenerDestinatariosConvocatoriaId($conexion, $convocatoria->getIdConvocatoria());
+            <?php foreach ($proyectos as $proyecto) :
             ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($convocatoria->getDestino()); ?></td>
-                    <td><?php echo htmlspecialchars($convocatoria->getTipo()); ?></td>
+                    <td><?php echo htmlspecialchars($proyecto->getNombreProyecto()); ?></td>
+                    <td><?php echo htmlspecialchars($proyecto->getFechaInicio()); ?></td>
+                    <td><?php echo htmlspecialchars($proyecto->getFechaFin()); ?></td>
+
                     <td>
-                        <?php
-                        foreach ($clases as $clase) :
-                            echo htmlspecialchars($clase->getIdDestinatario());
-                        endforeach;
-                        ?>
-                    </td>
-                    <td>
-                        <button class="asignar" onclick="openModal()">Asignar clases</button>
+                        <a class="asignar" id="enlaceBoton" href="index.php?menu=iniciarSesion">Solicita</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

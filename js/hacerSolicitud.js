@@ -20,7 +20,7 @@ window.addEventListener("load",function(){
         formulario.append(div.childNodes[i].id,file);
       }
     }
-    fetch('../api/procesarSolicitud.php', {
+    fetch('./api/procesarSolicitud.php', {
       method: 'POST',
       body: formulario
     })

@@ -1,8 +1,23 @@
 <?php
-require_once "../helper/autocargar.php";
 $conexion = DB::abreConexion();
-$id = isset($_GET['id']) ? $_GET['id'] : null;
-$items=convocatoriaBaremoRepository::obtenerConvocatoriaBaremoId($conexion,$id);
+$idSolicitud = isset($_GET['idSolicitud']) ? $_GET['idSolicitud'] : null;
+$dniCandidato = isset($_GET['dniCandidato']) ? $_GET['dniCandidato'] : null;
+$idConvocatoria = isset($_GET['idConvocatoria']) ? $_GET['idConvocatoria'] : null;
+
+$items=convocatoriaBaremoRepository::obtenerConvocatoriaBaremoId($conexion,$idSolicitud);
+
+$archivoIdiomas = "./archivos/idiomas/" . $idConvocatoria . $dniCandidato . ".pdf";
+$archivoNotas = "./archivos/notas/" . $idConvocatoria . $dniCandidato . ".pdf";
+
+// Verificar si los archivos existen antes de intentar leerlos
+if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
+    // Leer el contenido de los archivos
+    $contenidoIdiomas = file_get_contents($archivoIdiomas);
+    $contenidoNotas = file_get_contents($archivoNotas);
+
+} else {
+    echo "Alguno de los archivos no existe.";
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +31,11 @@ $items=convocatoriaBaremoRepository::obtenerConvocatoriaBaremoId($conexion,$id);
 <table border=1>
             <tr>
                 <th>Id Convocatoria</th>
-                <th>idBareno</th>
-                <th>requisiyo</th>
-                <th>valormin</th>
-                <th>valormax</th>
-                <th>presenyta</th>
+                <th>Baremo</th>
+                <th>Valor minimo</th>
+                <th>Valor máximo</th>
+                <th>Ver documento</th>
+                <th>Nota</th>
             </tr>
             <?php foreach ($items as $item) : 
              $Iteme=itemBaremableRepository::obtenerItemPorId($conexion,$item->getIdBaremo());
@@ -29,15 +44,22 @@ $items=convocatoriaBaremoRepository::obtenerConvocatoriaBaremoId($conexion,$id);
                 
                 <tr>
                     <input type="hidden" id="idSolicitud" value="<?php echo htmlspecialchars($item->getIdConvocatoriaBaremo()); ?>">
+                    <input type="hidden" id="documentoIdiomas" value="<?php echo htmlspecialchars($contenidoIdiomas); ?>">
+                    <input type="hidden" id="documentoNotas" value="<?php echo htmlspecialchars($contenidoNotas); ?>">
+
 
                     <td><?php echo htmlspecialchars($item->getIdConvocatoria()); ?></td>
                     <td><?php echo htmlspecialchars($nombreItem); ?></td>
-                    <td><?php echo htmlspecialchars($item->getRequisito()); ?></td>
                     <td><?php echo htmlspecialchars($item->getValorMin()); ?></td>
                     <td><?php echo htmlspecialchars($item->getValorMax()); ?></td>
-                    <td><?php echo htmlspecialchars($item->getPresentaUser()); ?></td>
+                    <td><button id="abrirPDF">Documento</td>
+
+                    <td><input type="number" min="<?php echo htmlspecialchars($item->getValorMin()); ?>" max="<?php echo htmlspecialchars($item->getValorMax()); ?>"></td>
                 </tr>
             <?php endforeach; ?>
         </table>
+        <button>Baremar</button>
 </body>
+<script src="./js/pdfBaremo.js" defer></script>
+
 </html>

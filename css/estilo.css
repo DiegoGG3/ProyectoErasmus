@@ -19,12 +19,8 @@ body {
     margin: 0;
     padding: 0;
 }
-
-h2, h1 {
-    color: #333;
-}
-
 form, #cuerpo {
+    text-align: center;
     max-width: 800px;
     margin: 20px auto;
     background-color: #fff;
@@ -47,15 +43,14 @@ textarea {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+ul {
+    list-style-type: none;
+    margin-bottom: 10px;
+    padding: 0;
+}
 
-input[type="submit"], #botonInicio, button {
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    margin: 2px;
+li {
+    margin-bottom: 5px;
 }
 
 input[type="submit"]:hover {
@@ -108,6 +103,9 @@ nav ul li {
     margin-right: 20px;
     text-decoration: none;
 }
+section {
+    margin-bottom: 20px;
+}
 
 section.main-content {
     padding: 20px;
@@ -140,9 +138,13 @@ header, #titulo {
     color: #fff;
     padding: 10px;
     text-align: center;
+    margin-bottom: 20px;
+
 }
 
 #titulo a, #titulo label {
+    font-size: 50px;
+    font-family: fantasy;
     color: #fff;
     text-decoration: none;
 }
@@ -179,19 +181,15 @@ header, #titulo {
     color: #4caf50;
 }
 
-.pregunta-container {
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-}
-
-.preguntasv {
-    display: none;
-}
-
-.preguntas {
-    margin-top: 10px;
-    background-color: #f0f0f0;
-    padding: 10px 15px;
+input[type="submit"], #botonInicio, button ,#enlaceBoton{
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin: 8px;
+    margin-bottom: 14px;
+    text-decoration: none;
+    font-size: medium;
 }

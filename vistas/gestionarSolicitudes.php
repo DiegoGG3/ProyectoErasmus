@@ -17,7 +17,7 @@ $solicitudes = DB::selectUniversal($conexion, "solicitud");
 
 <body>
     <section id="solicitudes">
-        <h2>Mis solicitudes</h2>
+        <h2>Solicitudes</h2>
 
         <table border=1>
             <tr>
@@ -34,13 +34,16 @@ $solicitudes = DB::selectUniversal($conexion, "solicitud");
                 
                 <tr>
                     <input type="hidden" id="idSolicitud" value="<?php echo htmlspecialchars($solicitud->getIdSolicitud()); ?>">
+                    <input type="hidden" id="dniCandidato" value="<?php echo htmlspecialchars($solicitud->getDniCandidato()); ?>">
+                    <input type="hidden" id="idConvocatoria" value="<?php echo htmlspecialchars($solicitud->getIdConvocatoria()); ?>">
+
                     <td><?php echo htmlspecialchars($solicitud->getDniCandidato()); ?></td>
                     <td><?php echo htmlspecialchars($solicitud->getIdConvocatoria()); ?></td>
                     <td><?php echo htmlspecialchars($solicitud->getDestinatario()); ?></td>
                     <td><?php echo htmlspecialchars($solicitud->getTelefono()); ?></td>
                     <td><?php echo htmlspecialchars($solicitud->getEmail()); ?></td>
                     <td><?php echo htmlspecialchars($solicitud->getDomicilio()); ?></td>
-                    <td><input type="button" id="revisar" value="Revisar" onclick="accederSolicitud(this)"></td>
+                    <td><input type="button" id="enlaceBoton" value="Revisar" onclick="accederSolicitud(this)"></td>
                 </tr>
             <?php endforeach; ?>
         </table>

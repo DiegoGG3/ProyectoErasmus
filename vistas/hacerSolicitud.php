@@ -1,5 +1,4 @@
 <?php
-require_once "../helper/autocargar.php";
 
 $conexion = DB::abreConexion();
 
@@ -14,7 +13,6 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Solicitud</title>
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
 
 </head>
 
@@ -57,9 +55,9 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
         <button type="submit" id="botonSolicitar">Solicitar</button>
     </form>
 </body>
-<script src="../js/pdf.js" defer></script>
-<script src="../js/hacerSolicitud.js" defer></script>
-<script src="../js/foto.js" defer></script>
+<script src="./js/pdf.js" defer></script>
+<script src="./js/hacerSolicitud.js" defer></script>
+<script src="./js/foto.js" defer></script>
 
 
 

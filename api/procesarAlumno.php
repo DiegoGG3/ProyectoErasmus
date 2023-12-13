@@ -24,4 +24,7 @@ try {
     print "Error!: No se pudo guardar el candidato</br>";
 }
 
+header("Location: ../index.php");
+
+
 ?>

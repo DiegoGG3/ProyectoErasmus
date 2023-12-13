@@ -29,10 +29,16 @@ function modalFoto(ev) {
   btnCaptura.innerHTML = "Tomar Foto";
   btnCaptura.setAttribute("id", "capture");
   btnCaptura.style.margin = "10%";
+  btnCaptura.style.width = "200px";
+  btnCaptura.style.height = "90px";
+
+
 
   btnEnviarFoto.innerHTML = "Finalizar";
   btnEnviarFoto.setAttribute("id", "btnFinalizarFoto");
   btnEnviarFoto.style.margin = "10%";
+  btnEnviarFoto.style.width = "200px";
+  btnEnviarFoto.style.height = "90px";
 
   cuadrito.style.display = "none";
 
