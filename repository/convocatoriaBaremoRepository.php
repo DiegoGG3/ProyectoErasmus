@@ -1,6 +1,15 @@
 <?php
 class convocatoriaBaremoRepository{
-    
+    public static function arrayConvocatoriaBaremo($objetos) {
+        $arrayConvocatorias = array();
+
+        foreach ($objetos as $array) {
+            array_push($arrayConvocatorias, convocatoriaBaremoRepository::crearConvocatoriaBaremo($array->idConvocatoria, $array->idConvocatoria, $array->idBaremo, $array->requisito, $array->VALOR_MIN, $array->VALOR_MAX, $array->presentaUser));
+        }
+
+        return $arrayConvocatorias;
+    }
+
     public static function crearConvocatoriaBaremo($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $VALOR_MIN, $VALOR_MAX, $presentaUser) {
         $convocatoria = new convocatoriaBaremo($idConvocatoriaBaremo, $idConvocatoria, $idBaremo, $requisito, $VALOR_MIN, $VALOR_MAX, $presentaUser);
         return $convocatoria;
@@ -25,6 +34,18 @@ class convocatoriaBaremoRepository{
         $preparedConexion->bindParam(':presentaUser', $presentaUser);
 
         $preparedConexion->execute();
+    }
+
+    public static function obtenerConvocatoriaBaremoId($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM convocatoriaBaremo WHERE idConvocatoria= :idConvocatoria");
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+
+        $preparedConexion->execute();
+        $soliciudes = array();
+
+        $soliciudes = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return convocatoriaBaremoRepository::arrayConvocatoriaBaremo($soliciudes);
     }
 }
 ?>

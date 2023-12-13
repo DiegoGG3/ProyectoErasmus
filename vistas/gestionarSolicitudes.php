@@ -29,7 +29,8 @@ $solicitudes = DB::selectUniversal($conexion, "solicitud");
                 <th>Domicilio</th>
                 <th>Revisar</th>
             </tr>
-            <?php foreach ($solicitudes as $solicitud) : ?>
+            <?php foreach ($solicitudes as $solicitud) : 
+                ?>
                 
                 <tr>
                     <input type="hidden" id="idSolicitud" value="<?php echo htmlspecialchars($solicitud->getIdSolicitud()); ?>">

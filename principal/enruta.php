@@ -20,6 +20,8 @@ if (isset($_GET['menu'])) {
         require_once './vistas/misConvocatorias.php';
     }elseif ($_GET['menu'] == "gestionarSolicitudes") {
         require_once './vistas/gestionarSolicitudes.php';
+    }elseif ($_GET['menu'] == "puntuaSolicitud") {
+        require_once './vistas/puntuaSolicitud.php';
     }
 } else {
     require_once './vistas/landinPage.php';

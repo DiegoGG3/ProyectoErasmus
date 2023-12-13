@@ -50,6 +50,9 @@ class DB
             case "solicitud":
                 return SolicitudRepository::arraySolicitudes($objetos);
                 break;
+            case "solicitud":
+                return convocatoriaBaremoRepository::arrayConvocatoriaBaremo($objetos);
+                break;
         }
     }
 }

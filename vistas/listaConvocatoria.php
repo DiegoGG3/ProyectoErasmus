@@ -2,6 +2,7 @@
 $conexion = DB::abreConexion();
 $curso = $_SESSION['user']->getCurso();
 $convocatorias = destinatarioConvocatoriaRepository::obtenerConvocatoriaPorId($conexion, $curso);
+var_dump($convocatorias);
 ?>
 <form method='post' id='formSolicitud' action="./vistas/hacerSolicitud.php">
     <table border=1>
