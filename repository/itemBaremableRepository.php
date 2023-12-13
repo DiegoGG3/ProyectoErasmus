@@ -33,6 +33,18 @@ class itemBaremableRepository{
         $preparedConexion->execute();
     }
 
+    public static function obtenerItemPorId($conexion, $idItem) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM itemBaremable WHERE idItem= :idItem");
+        $preparedConexion->bindParam(':idItem', $idItem);
+
+        $preparedConexion->execute();
+        $items = array();
+
+        $items = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return itemBaremableRepository::arrayItemBaremables($items);
+    }
+
 }
 
 ?>
