@@ -17,10 +17,10 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
 </head>
 
 <body>
-<input type="hidden" id="convocatoriaId" name="convocatoriaId" value="<?php echo ($convocatoriaId); ?>">
+    <input type="hidden" id="convocatoriaId" name="convocatoriaId" value="<?php echo ($convocatoriaId); ?>">
 
     <h2>Formulario de Solicitud</h2>
-    <form method="post">
+    <form method="post" class="registro">
         <label for="curso">Curso:</label>
         <select id="curso" name="curso" required>
             <?php foreach ($destinatarios as $destinatario) : ?>
@@ -38,21 +38,31 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
         <label for="domicilioCandidato">Domicilio:</label>
         <input type="text" id="domicilioCandidato" name="domicilioCandidato">
 
-        <div id="divFiles">
+        <div class="divFiles">
             <label for="documentoIdiomas">Documento de nivel de idiomas:</label>
             <input type="file" id="documentoIdiomas" name="documentoIdiomas">
             <button id="abrirPDF">Abrir PDF</button><br>
-    
+        </div>
+
+        <div class="divFiles">
             <label for="documentoNotas">Documento de Notas:</label>
             <input type="file" id="documentoNotas" name="documentoNotas">
             <button id="abrirPDF2">Abrir PDF</button><br>
-    
-            <img id="foton">
-            <input type="hidden" id="blob">
-            <button id="foto" onclick="modalFoto(event)">Hacer foto</button><br>
         </div>
 
-        <button type="submit" id="botonSolicitar">Solicitar</button>
+        <div>
+            <label></label>
+            <button id="foto" onclick="modalFoto(event)">Hacer foto</button><br>
+        </div>
+        <img id="foton">
+
+
+        <label></label>
+        <div>
+            <input type="hidden" id="blob">
+            <button type="submit" id="botonSolicitar">Solicitar</button>
+
+        </div>
     </form>
 </body>
 <script src="./js/pdf.js" defer></script>

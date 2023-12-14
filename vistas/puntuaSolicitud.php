@@ -44,8 +44,8 @@ if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
                 
                 <tr>
                     <input type="hidden" id="idSolicitud" value="<?php echo htmlspecialchars($item->getIdConvocatoriaBaremo()); ?>">
-                    <input type="hidden" id="documentoIdiomas" value="<?php echo htmlspecialchars($contenidoIdiomas); ?>">
-                    <input type="hidden" id="documentoNotas" value="<?php echo htmlspecialchars($contenidoNotas); ?>">
+                    <input type="hidden" id="documentoIdiomas" value="<?php echo htmlspecialchars($archivoIdiomas); ?>">
+                    <input type="hidden" id="documentoNotas" value="<?php echo htmlspecialchars($archivoNotas); ?>">
 
 
                     <td><?php echo htmlspecialchars($item->getIdConvocatoria()); ?></td>

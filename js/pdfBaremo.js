@@ -2,14 +2,14 @@ window.addEventListener("load", function () {
   const contenedor = document.getElementById("contenedor");
   const boton = document.getElementById("abrirPDF");
 
-  const documento2 = document.getElementById("documentoNotas");
 
   boton.onclick = function (ev) {
     ev.preventDefault();
     const documento1 = this.parentNode.parentNode.childNodes[5].value;
+    const documento2 = this.parentNode.parentNode.childNodes[7].value;
 
 
-    if (documento1.trim() !== "") {
+    if (documento1 !== "") {
       var iframe = document.createElement("iframe");
       iframe.style.width = "100%";
       iframe.style.height = "100%";
@@ -57,10 +57,7 @@ window.addEventListener("load", function () {
         document.body.removeChild(this);
       };
 
-      const blob = new Blob([documento1], { type: "application/pdf" });
-      
-      // Set the iframe source
-      iframe.src = URL.createObjectURL(blob);
+      iframe.src = documento1;
     }
   };
 });

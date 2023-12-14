@@ -207,5 +207,10 @@ input[type="submit"], #botonInicio, button ,#enlaceBoton{
 
 .contraseñas{
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 70% 30%;
+}
+
+.registro{
+    display: grid;
+    grid-template-columns: 50% 50%; 
 }

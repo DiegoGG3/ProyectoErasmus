@@ -14,7 +14,7 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
 </head>
 <body>
     <h2>Formulario de Registro de Candidato</h2>
-    <form action="./api/procesarAlumno.php" method="post">
+    <form action="./api/procesarAlumno.php" method="post" class="registro">
         <label for="dniCandidato">DNI del Candidato:</label>
         <input type="text" id="dniCandidato" name="dniCandidato" required>
 
@@ -61,10 +61,12 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
             <input type="password" id="repetirContraseña" name="repetirContraseña" required oninput="validarContraseñas()">
             <button type="button" onclick="mostrarRepetirContraseña()">Mostrar</button>
         </div>
-
         <p id="mensajeErrorContraseña" style="color: red;"></p>
 
-        <button type="submit" id="boton">Registrar</button>
+        <div class="contraseñas">
+            <label></label>
+            <button type="submit" id="boton">Registrar</button>
+        </div>
     </form>
 </body>
 <script src="./js/registraAlumno.js" defer></script>
