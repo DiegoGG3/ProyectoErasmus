@@ -12,7 +12,15 @@ window.addEventListener("load",function(){
 
 
 
-    var div=document.getElementById("divFiles");
+    var div1=document.getElementById("divFiles");
+    for(var i=1;i<div1.childNodes.length;i++){
+      
+      if(div1.childNodes[i].type=="file"){
+        var file=(div1.childNodes[i].files[0]);
+        formulario.append(div1.childNodes[i].id,file);
+      }
+    }
+    var div=document.getElementById("divFiles2");
     for(var i=1;i<div.childNodes.length;i++){
       
       if(div.childNodes[i].type=="file"){

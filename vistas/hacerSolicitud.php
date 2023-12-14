@@ -38,13 +38,13 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
         <label for="domicilioCandidato">Domicilio:</label>
         <input type="text" id="domicilioCandidato" name="domicilioCandidato">
 
-        <div class="divFiles">
+        <div class="divFiles" id="divFiles">
             <label for="documentoIdiomas">Documento de nivel de idiomas:</label>
             <input type="file" id="documentoIdiomas" name="documentoIdiomas">
             <button id="abrirPDF">Abrir PDF</button><br>
         </div>
 
-        <div class="divFiles">
+        <div class="divFiles" id="divFiles2">
             <label for="documentoNotas">Documento de Notas:</label>
             <input type="file" id="documentoNotas" name="documentoNotas">
             <button id="abrirPDF2">Abrir PDF</button><br>

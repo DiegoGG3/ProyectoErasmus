@@ -4,6 +4,8 @@ $curso = $_SESSION['user']->getCurso();
 $convocatorias = destinatarioConvocatoriaRepository::obtenerConvocatoriaPorId($conexion, $curso);
 ?>
 <form method='post' id='formSolicitud' action="index.php?menu=hacerSolicitud">
+<input type="hidden" id="convocatoriaId" name="convocatoriaId" value="">
+
     <table border=1>
     <h2>Convocatorias disponibles</h2>
 
@@ -24,7 +26,6 @@ $convocatorias = destinatarioConvocatoriaRepository::obtenerConvocatoriaPorId($c
             </tr>
         <?php endforeach; ?>
     </table>
-    <input type="hidden" id="convocatoriaId" name="convocatoriaId" value="">
 
 </form>
 <script>

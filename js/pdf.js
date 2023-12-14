@@ -7,7 +7,6 @@ window.addEventListener("load", function () {
   const documento1 = document.getElementById("documentoIdiomas");
   const documento2 = document.getElementById("documentoNotas");
 
-
   const player = document.getElementById('player');
 
   const constraints = {

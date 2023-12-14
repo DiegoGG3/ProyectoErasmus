@@ -3,7 +3,7 @@ class SolicitudRepository {
  
 
     public static function añadirSolicitud($conexion,$solicitud) {
-        $preparedConexion = $conexion->prepare("INSERT INTO solicitud (dniCandidato, idConvocatoria, destinatario, telefono, email, domicilio, foto,estado) VALUES (:dniCandidato, :idConvocatoria, :destinatario, :telefono, :email, :domicilio, :foto, 'En Revisión')");
+        $preparedConexion = $conexion->prepare("INSERT INTO solicitud (dniCandidato, idConvocatoria, destinatario, telefono, email, domicilio, foto, estado) VALUES (:dniCandidato, :idConvocatoria, :destinatario, :telefono, :email, :domicilio, :foto, :estado)");
 
         $dni = $solicitud->getDniCandidato();
         $IdConvocatoria = $solicitud->getIdConvocatoria();
@@ -12,6 +12,8 @@ class SolicitudRepository {
         $gmail = $solicitud->getEmail();
         $domicilio = $solicitud->getDomicilio();
         $foto = $solicitud->getFoto();
+        $estado = "En revision";
+
 
 
 
@@ -22,6 +24,7 @@ class SolicitudRepository {
         $preparedConexion->bindParam(':email', $gmail);
         $preparedConexion->bindParam(':domicilio', $domicilio);
         $preparedConexion->bindParam(':foto', $foto);
+        $preparedConexion->bindParam(':estado', $estado);
 
 
         $preparedConexion->execute();

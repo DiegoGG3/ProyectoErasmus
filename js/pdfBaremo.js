@@ -5,7 +5,8 @@ window.addEventListener("load", function () {
 
   boton.onclick = function (ev) {
     ev.preventDefault();
-    const documento1 = this.parentNode.parentNode.childNodes[5].value;
+    console.log(this.parentNode.parentNode.childNodes[1]);
+    const documento1 = this.parentNode.parentNode.childNodes[1].value;
     const documento2 = this.parentNode.parentNode.childNodes[7].value;
 
 

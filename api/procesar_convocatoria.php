@@ -60,10 +60,10 @@ try {
                 "",
                 $idConvocatoia,
                 $_POST["idBaremo" . $i],
-                $_POST["obligatorio" . $i],
+                true,
                 $_POST["min" . $i],
                 $_POST["max" . $i],
-                $_POST["aportado" . $i]
+                true
             );
             convocatoriaBaremoRepository::añadirConvocatoria($conexion, $convocatoriaBaremo);
         } else if (isset($_POST["idBaremo" . $i], $_POST["min" . $i], $_POST["max" . $i], $_POST["aportado" . $i])) {
@@ -74,7 +74,7 @@ try {
                 false,
                 $_POST["min" . $i],
                 $_POST["max" . $i],
-                $_POST["aportado" . $i]
+                true
             );
             convocatoriaBaremoRepository::añadirConvocatoria($conexion, $convocatoriaBaremo);
         } else if (isset($_POST["idBaremo" . $i], $_POST["min" . $i], $_POST["max" . $i], $_POST["obligatorio" . $i])) {
@@ -82,7 +82,7 @@ try {
                 "",
                 $idConvocatoia,
                 $_POST["idBaremo" . $i],
-                $_POST["obligatorio" . $i],
+                true,
                 $_POST["min" . $i],
                 $_POST["max" . $i],
                 false

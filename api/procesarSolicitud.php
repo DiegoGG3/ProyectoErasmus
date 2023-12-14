@@ -15,7 +15,7 @@ $solicitud = solicitudRepository::crearSolicitud(
     $_POST["correoCandidato"],
     $_POST["domicilioCandidato"],
     $_POST["foto"],
-    ""
+    "En revision"
 
 );
 
