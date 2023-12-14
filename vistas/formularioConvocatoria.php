@@ -62,10 +62,13 @@ $clases = DB::selectUniversal($conexion, 'destinatario');
         <input type="text" id="destino" name="destino" required><br>
 
         <label>Clases:</label>
-        <?php foreach ($clases as $clase) : ?>
-            <input type="checkbox" id="<?php echo ($clase->getCodigoGrupo()); ?>" name="<?php echo ($clase->getCodigoGrupo()); ?>"><?php echo ($clase->getNombre()); ?>
-        <?php endforeach; ?>
-
+        <div id="divClases">
+            <?php foreach ($clases as $clase) : ?>
+                <div>
+                    <input  type="checkbox" class="checkbox" id="<?php echo ($clase->getCodigoGrupo()); ?>" name="<?php echo ($clase->getCodigoGrupo()); ?>"> <label for="<?php echo ($clase->getCodigoGrupo()); ?>" ><?php echo ($clase->getNombre()); ?></label>
+                </div>
+            <?php endforeach; ?>
+        </div>
 
         <table border="2" id="tablaItem">
             <tr>

@@ -51,13 +51,13 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
         <input type="text" id="domicilioCandidato" name="domicilioCandidato" required>
 
         <label for="contraseñaCandidato">Contraseña:</label>
-        <div>
-            <input type="password" id="contraseñaCandidato" name="contraseñaCandidato" required>
+        <div class="contraseñas">
+            <input type="password" id="contraseñaCandidato" name="contraseñaCandidato"  required>
             <button type="button" onclick="mostrarContraseña()">Mostrar</button>
         </div>
 
         <label for="repetirContraseña">Repetir Contraseña:</label>
-        <div>
+        <div class="contraseñas">
             <input type="password" id="repetirContraseña" name="repetirContraseña" required oninput="validarContraseñas()">
             <button type="button" onclick="mostrarRepetirContraseña()">Mostrar</button>
         </div>

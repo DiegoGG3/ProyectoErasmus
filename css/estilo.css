@@ -30,8 +30,7 @@ form, #cuerpo {
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
     color: #333;
 }
 
@@ -82,6 +81,14 @@ tr {
 tr:nth-child(odd) {
     background-color: #94c694;
 }
+
+#divClases{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-top: 20px;
+}
+
+
 
 tr:hover {
     background-color: #719971;
@@ -192,4 +199,13 @@ input[type="submit"], #botonInicio, button ,#enlaceBoton{
     margin-bottom: 14px;
     text-decoration: none;
     font-size: medium;
+}
+
+.checkbox{
+    width: 20%;
+}
+
+.contraseñas{
+    display: grid;
+    grid-template-columns: 80% 20%;
 }
