@@ -16,14 +16,18 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
     <h2>Formulario de Registro de Candidato</h2>
     <form action="./api/procesarAlumno.php" method="post" class="registro">
         <label for="dniCandidato">DNI del Candidato:</label>
-        <input type="text" id="dniCandidato" name="dniCandidato" required>
-
+        <input type="text" id="dniCandidato" name="dniCandidato" required oninput="validarYCompararDNI()">
+        <p></p>
+        <p id="mensajeErrorDNI" style="color: red;"></p>
+        
         <label for="fechanacCandidato">Fecha de Nacimiento:</label>
         <input type="date" id="fechanacCandidato" name="fechanacCandidato" onchange="validarEdad()" required>
 
         <label for="dniTutor">DNI del Tutor:</label>
-        <input type="text" id="dniTutor" name="dniTutor" disabled>
-
+        <input type="text" id="dniTutor" name="dniTutor" disabled oninput="validarYCompararDNITutor()">
+        <p></p>
+        <p id="mensajeErrorDniTutor" style="color: red;"></p>
+        
         <label for="ap1Candidato">Apellido Paterno:</label>
         <input type="text" id="ap1Candidato" name="ap1Candidato" required>
 
@@ -42,10 +46,14 @@ $destinatarios = DB::selectUniversal($conexion, 'destinatario');
         </select>
 
         <label for="telefonoCandidato">Teléfono:</label>
-        <input type="tel" id="telefonoCandidato" name="telefonoCandidato" required>
+        <input type="tel" id="telefonoCandidato" name="telefonoCandidato" required oninput="validarYCompararTelefono()">
+        <p></p>
+        <p id="mensajeErrorTelefono" style="color: red;"></p>
 
         <label for="correoCandidato">Correo Electrónico:</label>
-        <input type="email" id="correoCandidato" name="correoCandidato" required>
+        <input type="email" id="correoCandidato" name="correoCandidato" required oninput="validarYCompararEmail()">
+        <p></p>
+        <p id="mensajeErrorEmail" style="color: red;"></p>
 
         <label for="domicilioCandidato">Domicilio:</label>
         <input type="text" id="domicilioCandidato" name="domicilioCandidato" required>

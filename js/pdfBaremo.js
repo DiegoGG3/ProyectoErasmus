@@ -1,20 +1,25 @@
+// Esperar a que la ventana cargue completamente
 window.addEventListener("load", function () {
+  // Obtener referencias a elementos del DOM
   const contenedor = document.getElementById("contenedor");
   const boton = document.getElementById("abrirPDF");
 
-
+  // Asignar una función al evento click del botón
   boton.onclick = function (ev) {
     ev.preventDefault();
-    console.log(this.parentNode.parentNode.childNodes[1]);
+    
+    // Obtener referencias a los elementos que contienen las rutas de los documentos
     const documento1 = this.parentNode.parentNode.childNodes[1].value;
     const documento2 = this.parentNode.parentNode.childNodes[7].value;
 
-
+    // Verificar que la ruta del primer documento no esté vacía
     if (documento1 !== "") {
+      // Crear un elemento iframe para visualizar el documento
       var iframe = document.createElement("iframe");
       iframe.style.width = "100%";
       iframe.style.height = "100%";
 
+      // Crear elementos para el modal
       var modal = document.createElement("div");
       modal.style.position = "fixed";
       modal.style.left = 0;
@@ -46,18 +51,21 @@ window.addEventListener("load", function () {
       closer.style.zIndex = 101;
       document.body.appendChild(closer);
 
+      // Asignar función al evento click del botón de cierre
       closer.onclick = function () {
         document.body.removeChild(modal);
         document.body.removeChild(visualizador);
         document.body.removeChild(this);
       };
 
+      // Asignar función al evento de doble clic en el visualizador para cerrar
       visualizador.ondblclick = function () {
         document.body.removeChild(modal);
         document.body.removeChild(closer);
         document.body.removeChild(this);
       };
 
+      // Cargar el documento en el iframe
       iframe.src = documento1;
     }
   };

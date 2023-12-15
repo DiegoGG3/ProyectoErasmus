@@ -30,10 +30,14 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
         </select>
 
         <label for="telefonoCandidato">Teléfono:</label>
-        <input type="tel" id="telefonoCandidato" name="telefonoCandidato">
+        <input type="tel" id="telefonoCandidato" name="telefonoCandidato" oninput="validarYComparar()">
+        <p></p>
+        <p id="mensajeErrorYelefono" style="color: red;"></p>
 
         <label for="correoCandidato">Correo Electrónico:</label>
-        <input type="email" id="correoCandidato" name="correoCandidato">
+        <input type="email" id="correoCandidato" name="correoCandidato"  oninput="validarYCompararEmail()">
+        <p></p>
+        <p id="mensajeErrorEmail" style="color: red;"></p>
 
         <label for="domicilioCandidato">Domicilio:</label>
         <input type="text" id="domicilioCandidato" name="domicilioCandidato">
