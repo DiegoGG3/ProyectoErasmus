@@ -14,7 +14,6 @@ function desactivarEdicion(checkbox) {
     // Obtener todos los elementos de entrada (inputs) dentro de la fila
     var inputs = fila.getElementsByTagName('input');
 
-    // Iterar sobre los elementos de entrada y desactivarlos si el checkbox no está marcado
     for (var i = 1; i < inputs.length; i++) {
         inputs[i].disabled = !checkbox.checked;
         inputs[1].disabled = true; // Desactivar el segundo input independientemente del estado del checkbox
@@ -42,7 +41,6 @@ function activarId() {
     // Obtener todos los elementos con la clase "id"
     var ids = document.getElementsByClassName("id");
 
-    // Iterar sobre los elementos con la clase "id"
     for (let i = 0; i < ids.length; i++) {
         // Obtener el checkbox correspondiente a la fila actual
         var checkbox = document.getElementById("seleccionar" + (i + 1));

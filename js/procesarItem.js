@@ -17,9 +17,9 @@ window.addEventListener("load", function () {
       // Verificar si la columna es la 1ra, 3ra, 5ta o 7ma
       if (i == 1 || i == 3 || i == 5 || i == 7) {
         // Acceder a los elementos de la fila correspondiente
-        console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[19].childNodes[0].value);
-        console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[3]);
-        console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[5]);
+        console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[17].childNodes[0].value);
+        // console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[3]);
+        // console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[5]);
       }
     }
 

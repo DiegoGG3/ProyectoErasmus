@@ -44,10 +44,11 @@ if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
             ?>
 
                 <tr>
-                <?php
-                    if ($item->getIdBaremo() == 1) { $i=0?>
-                    <input type="hidden" id="documentoNotas" value="<?php echo htmlspecialchars($archivoNotas); ?>">
-                    <?php } else if($item->getIdBaremo() == 2){ ?>
+                    <?php
+                    if ($item->getIdBaremo() == 1) {
+                        $i = 0 ?>
+                        <input type="hidden" id="documentoNotas" value="<?php echo htmlspecialchars($archivoNotas); ?>">
+                    <?php } else if ($item->getIdBaremo() == 2) { ?>
                         <input type="hidden" id="documentoIdiomas" value="<?php echo htmlspecialchars($archivoIdiomas); ?>">
                     <?php } ?>
 
@@ -55,15 +56,15 @@ if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
                     <input type="hidden" id="idBaremo" value="<?php echo htmlspecialchars($item->getIdBaremo()); ?>">
 
 
-                    <td><?php echo htmlspecialchars($item->getIdBaremo()); ?></td>
+                    <td><?php echo htmlspecialchars($idConvocatoria); ?></td>
                     <td><?php echo htmlspecialchars($nombreItem); ?></td>
                     <td><?php echo htmlspecialchars($item->getValorMin()); ?></td>
                     <td><?php echo htmlspecialchars($item->getValorMax()); ?></td>
                     <?php
-                    if ($item->getPresentaUser() == 1) { $i=0?>
+                    if ($item->getPresentaUser() == 1) {
+                        $i = 0 ?>
                         <td><button id="abrirPDF">Documento</button></td>
                     <?php } else { ?>
-                        
                         <td><label></label></td>
                     <?php } ?>
 
@@ -78,7 +79,7 @@ if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
     </form>
 </body>
 <script src="./js/pdfBaremo.js" defer></script>
-<!-- <script src="./js/procesarItem.js" defer></script> -->
+<script src="./js/procesarItem.js" defer></script>
 
 
 </html>
