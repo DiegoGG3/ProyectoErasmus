@@ -6,7 +6,26 @@ $items = DB::selectUniversal($conexion, 'itemBaremable');
 $proyectos = DB::selectUniversal($conexion, 'proyecto');
 $clases = DB::selectUniversal($conexion, 'destinatario');
 
+if (isset($_POST['enviar'])) {
+    $valida->Requerido('movilidades');
+    $valida->Requerido('tipo');
+    $valida->Requerido('fechaInicioSolicitud');
+    $valida->Requerido('fechaFinSolicitud');
+    $valida->Requerido('fechaInicioPrueba');
+    $valida->Requerido('fechaFinPrueba');
+    $valida->Requerido('fechaListadoProvisional');
+    $valida->Requerido('fechaListadoDefinitivo');
+    $valida->Requerido('idProyecto');
+    $valida->Requerido('destino');
 
+
+    if ($valida->ValidacionPasada()) {
+        var_dump("Todo correcto");
+
+    }else{
+        var_dump("Rellene los campos");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +137,7 @@ $clases = DB::selectUniversal($conexion, 'destinatario');
             </tr>
         </table><br>
     </div>
-        <input type="submit" value="Enviar" id="enviar">
+        <input type="submit" value="Enviar" name="enviar" id="enviar">
 
 
     </form>

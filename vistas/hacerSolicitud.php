@@ -69,8 +69,10 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
         </div>
     </form>
 </body>
+<script src="./js/enviarCorreo.js" defer></script>
 <script src="./js/pdf.js" defer></script>
 <script src="./js/hacerSolicitud.js" defer></script>
+
 <script src="./js/foto.js" defer></script>
 
 
