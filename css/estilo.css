@@ -94,9 +94,7 @@ tr:hover {
     background-color: #719971;
 }
 
-#contenedorFoto, .tablaAdicional {
-    display: none;
-}
+
 
 nav ul {
     list-style: none;
@@ -213,4 +211,8 @@ input[type="submit"], #botonInicio, button ,#enlaceBoton{
 .registro{
     display: grid;
     grid-template-columns: 50% 50%; 
+}
+
+#contenedorFoto, .tablaAdicional, .abrirPDFNo {
+    display: none;
 }

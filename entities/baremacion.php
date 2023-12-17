@@ -3,15 +3,16 @@
 class Baremacion {
     private $idBaremacion;
     private $idItem;
+    private $idSolicitud;
     private $nota;
-    private $entregaCandidato;
     private $url;
 
-    public function __construct($idBaremacion, $idItem, $nota, $entregaCandidato, $url) {
+    public function __construct($idBaremacion,$idSolicitud ,$idItem, $nota, $url) {
         $this->idBaremacion = $idBaremacion;
+        $this->idSolicitud = $idSolicitud;
+
         $this->idItem = $idItem;
         $this->nota = $nota;
-        $this->entregaCandidato = $entregaCandidato;
         $this->url = $url;
     }
 
@@ -19,8 +20,17 @@ class Baremacion {
         return $this->idBaremacion;
     }
 
-    public function setIdBaremacion($idBaremacion) {
+    public function setidBaremacion($idBaremacion) {
         $this->idBaremacion = $idBaremacion;
+    }
+
+
+    public function getIdSolicitud() {
+        return $this->idSolicitud;
+    }
+
+    public function setIdSolicitud($idSolicitud) {
+        $this->idSolicitud = $idSolicitud;
     }
 
     public function getIdItem() {
@@ -37,14 +47,6 @@ class Baremacion {
 
     public function setNota($nota) {
         $this->nota = $nota;
-    }
-
-    public function getEntregaCandidato() {
-        return $this->entregaCandidato;
-    }
-
-    public function setEntregaCandidato($entregaCandidato) {
-        $this->entregaCandidato = $entregaCandidato;
     }
 
     public function getUrl() {

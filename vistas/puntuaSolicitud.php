@@ -65,7 +65,7 @@ if (file_exists($archivoIdiomas) && file_exists($archivoNotas)) {
                         $i = 0 ?>
                         <td><button id="abrirPDF">Documento</button></td>
                     <?php } else { ?>
-                        <td><label></label></td>
+                        <td><button class="abrirPDFNo" disabled>Documento</button></td>
                     <?php } ?>
 
 

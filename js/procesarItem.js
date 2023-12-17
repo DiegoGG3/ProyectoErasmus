@@ -7,19 +7,25 @@ window.addEventListener("load", function () {
 
     // Crear un objeto FormData y agregar el idSolicitud al formulario
     var formulario = new FormData();
+    formulario.append("documentoNotas",document.getElementById("documentoNotas").value);
+    formulario.append("documentoIdiomas",document.getElementById("documentoIdiomas").value);
     formulario.append("idSolicitud", document.getElementById("idSolicitud").value);
 
     // Obtener referencia a la tabla con id "tabla"
     var tabla = document.getElementById("tabla");
 
     // Iterar sobre las filas de la tabla
-    for (var i = 1; i < tabla.childNodes.length * 3; i++) {
+    for (var i = 1; i < tabla.childNodes.length * 4; i++) {
       // Verificar si la columna es la 1ra, 3ra, 5ta o 7ma
-      if (i == 1 || i == 3 || i == 5 || i == 7) {
+      if (i == 1 || i == 3 ) {
+        formulario.append("idItem"+i,tabla.childNodes[1].childNodes[i + 1].childNodes[5].value);
         // Acceder a los elementos de la fila correspondiente
-        console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[17].childNodes[0].value);
-        // console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[3]);
-        // console.log(tabla.childNodes[1].childNodes[i + 1].childNodes[5]);
+        formulario.append("valorItem"+i,tabla.childNodes[1].childNodes[i + 1].childNodes[17].childNodes[0].value);
+        
+      }else if(i == 5 || i == 7){
+        formulario.append("idItem"+i,tabla.childNodes[1].childNodes[i + 1].childNodes[3].value);
+
+        formulario.append("valorItem"+i,tabla.childNodes[1].childNodes[i + 1].childNodes[15].childNodes[0].value);
       }
     }
 
@@ -30,9 +36,7 @@ window.addEventListener("load", function () {
     })
     .then(response => response.text())
     .then(data => {
-      // Actualizar o realizar acciones necesarias después de la respuesta del servidor
-      // Por ejemplo, podrías recargar la página o mostrar un mensaje al usuario
-      // console.log(data);
+      console.log(data);
     });
   });
 });

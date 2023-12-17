@@ -2,13 +2,17 @@
 class BaremacionRepository {
 
     public static function añadirBaremacion($conexion,$baremacion) {
-        $preparedConexion = $conexion->prepare("INSERT INTO baremacion (idBaremacion, idItem, nota, entregaCandidato, url) VALUES (:idBaremacion, :idItem, :nota, :entregaCandidato, :url)");
+        $preparedConexion = $conexion->prepare("INSERT INTO baremacion (idSolicitud, idItem, nota, url) VALUES (:idSolicitud, :idItem, :nota, :url)");
 
-        $preparedConexion->bindParam(':idBaremacion', $baremacion->getIdBaremacion());
-        $preparedConexion->bindParam(':idItem', $baremacion->getIdItem());
-        $preparedConexion->bindParam(':nota', $baremacion->getNota());
-        $preparedConexion->bindParam(':entregaCandidato', $baremacion->getEntregaCandidato());
-        $preparedConexion->bindParam(':url', $baremacion->getUrl());
+        $idSolicitud = $baremacion->getIdSolicitud();
+        $idItem = $baremacion->getIdItem();
+        $nota = $baremacion->getNota();
+        $url = $baremacion->getUrl();
+
+        $preparedConexion->bindParam(':idSolicitud', $idSolicitud);
+        $preparedConexion->bindParam(':idItem', $idItem);
+        $preparedConexion->bindParam(':nota', $nota);
+        $preparedConexion->bindParam(':url', $url);
 
         $preparedConexion->execute();
     }
@@ -25,14 +29,14 @@ class BaremacionRepository {
         $arrayBaremaciones = array();
 
         foreach ($objetos as $array) {
-            array_push($arrayBaremaciones, BaremacionRepository::crearBaremacion($array->idBaremacion, $array->idItem, $array->nota, $array->entregaCandidato, $array->url));
+            array_push($arrayBaremaciones, BaremacionRepository::crearBaremacion($array->idBaremacion,$array->idSolicitud ,$array->idItem, $array->nota, $array->url));
         }
 
         return $arrayBaremaciones;
     }
 
-    public static function crearBaremacion($idBaremacion, $idItem, $nota, $entregaCandidato, $url) {
-        return new Baremacion($idBaremacion, $idItem, $nota, $entregaCandidato, $url);
+    public static function crearBaremacion($idBaremacion, $idSolicitud,$idItem, $nota, $url) {
+        return new Baremacion($idBaremacion, $idSolicitud,$idItem, $nota, $url);
     }
 }
 
