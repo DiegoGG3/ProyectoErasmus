@@ -11,8 +11,8 @@ if (isset($_GET['menu'])) {
     } elseif ($_GET['menu'] == "iniciarSesion") {
         require_once './vistas/iniciarSesion.php';
 
-    } elseif ($_GET['menu'] == "asignaConvocatoria") {
-        require_once './vistas/asignaConvocatoria.php';
+    } elseif ($_GET['menu'] == "editarConvocatoria") {
+        require_once './vistas/editarConvocatoria.php';
 
     } elseif ($_GET['menu'] == "Registro") {
         require_once './vistas/registraAlumno.php';
@@ -40,6 +40,10 @@ if (isset($_GET['menu'])) {
     }
     elseif ($_GET['menu'] == "puntuaSolicitud") {
         require_once './vistas/puntuaSolicitud.php';
+    }
+
+    elseif ($_GET['menu'] == "cambiaConvocatoria") {
+        require_once './vistas/cambiaConvocatoria.php';
     }
 } else {
     require_once './vistas/landinPage.php';

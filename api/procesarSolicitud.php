@@ -32,11 +32,12 @@ try {
     move_uploaded_file($_FILES['documentoNotas']['tmp_name'], $ruta);
 
     $conexion->commit();
+    header("Location: ../index.php");
+
 } catch (Exception $e) {
     $conexion->rollback();
     print "Error!: No se pudo guardar la solicitud</br>";
 }
 
-header("Location: ../index.php");
 
 ?>

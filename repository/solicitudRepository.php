@@ -64,6 +64,14 @@ class SolicitudRepository {
         
         return SolicitudRepository::arraySolicitudes($soliciudes);
     }
+
+    public static function editarEstadoSolicitud($conexion, $idSolicitud) {
+        $preparedConexion = $conexion->prepare("UPDATE solicitud SET estado = 'aceptada' WHERE idSolicitud = :idSolicitud");
+
+        $preparedConexion->bindParam(':idSolicitud', $idSolicitud);
+
+        $preparedConexion->execute();
+    }
 }
 
 ?>

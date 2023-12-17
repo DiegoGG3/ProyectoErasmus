@@ -40,8 +40,10 @@ window.addEventListener("load", function () {
     })
       .then(response => response.text())
       .then(data => {
-        console.log(data);
-      });
+        var url = 'http://localhost/proyectoerasmus/index.php';
+  
+        // Redirigir a la nueva página
+        window.location.href = url;      });
   });
 });
 

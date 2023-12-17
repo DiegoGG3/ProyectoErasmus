@@ -64,6 +64,75 @@ class convocatoriaRepository {
         return convocatoriaRepository::arrayConvocatorias($destinatariosConvocatoria);
     }
     
+    public static function editarMovilidades($conexion, $idConvocatoria, $nuevoMovilidades) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET movilidades = :movilidades WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':movilidades', $nuevoMovilidades);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarTipo($conexion, $idConvocatoria, $nuevoTipo) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET tipo = :tipo WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':tipo', $nuevoTipo);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaInicioSolicitud($conexion, $idConvocatoria, $nuevaFechaInicioSolicitud) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaInicioSolicitud = :fechaInicioSolicitud WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaInicioSolicitud', $nuevaFechaInicioSolicitud);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaFinSolicitud($conexion, $idConvocatoria, $nuevaFechaFinSolicitud) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaFinSolicitud = :fechaFinSolicitud WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaFinSolicitud', $nuevaFechaFinSolicitud);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaInicioPrueba($conexion, $idConvocatoria, $nuevaFechaInicioPrueba) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaInicioPrueba = :fechaInicioPrueba WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaInicioPrueba', $nuevaFechaInicioPrueba);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaFinPrueba($conexion, $idConvocatoria, $nuevaFechaFinPrueba) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaFinPrueba = :fechaFinPrueba WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaFinPrueba', $nuevaFechaFinPrueba);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaListadoProvisional($conexion, $idConvocatoria, $nuevaFechaListadoProvisional) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaListadoProvisional = :fechaListadoProvisional WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaListadoProvisional', $nuevaFechaListadoProvisional);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarFechaListadoDefinitivo($conexion, $idConvocatoria, $nuevaFechaListadoDefinitivo) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET fechaListadoDefinitivo = :fechaListadoDefinitivo WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':fechaListadoDefinitivo', $nuevaFechaListadoDefinitivo);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarIdProyecto($conexion, $idConvocatoria, $nuevoIdProyecto) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET idProyecto = :idProyecto WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':idProyecto', $nuevoIdProyecto);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
+
+    public static function editarDestino($conexion, $idConvocatoria, $nuevoDestino) {
+        $preparedConexion = $conexion->prepare("UPDATE Convocatoria SET destino = :destino WHERE idConvocatoria = :idConvocatoria");
+        $preparedConexion->bindParam(':destino', $nuevoDestino);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+        $preparedConexion->execute();
+    }
     
 }
 
