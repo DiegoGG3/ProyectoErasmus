@@ -40,6 +40,14 @@ class destinatarioConvocatoriaRepository{
         return destinatarioConvocatoriaRepository::arrayDestinatarioConvocatoria($destinatariosConvocatoria);
     }
 
+    public static function borrarDestinatarioConvocatoria($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("DELETE FROM destinatarioConvocatoria WHERE idConvocatoria = :idConvocatoria");
+
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
+
+        $preparedConexion->execute();
+    }
+
     public static function obtenerConvocatoriaPorId($conexion, $idDestinatario) {
         $preparedConexion = $conexion->prepare("SELECT * FROM destinatarioConvocatoria WHERE idDestinatario= :idDestinatario");
         $preparedConexion->bindParam(':idDestinatario', $idDestinatario);

@@ -17,10 +17,10 @@ class BaremacionRepository {
         $preparedConexion->execute();
     }
 
-    public static function borrarBaremacion($conexion,$idBaremacion) {
-        $preparedConexion = $conexion->prepare("DELETE FROM baremacion WHERE idBaremacion = :idBaremacion");
+    public static function borrarBaremacion($conexion,$idSolicitud) {
+        $preparedConexion = $conexion->prepare("DELETE FROM baremacion WHERE idSolicitud = :idSolicitud");
 
-        $preparedConexion->bindParam(':idBaremacion', $idBaremacion);
+        $preparedConexion->bindParam(':idSolicitud', $idSolicitud);
 
         $preparedConexion->execute();
     }

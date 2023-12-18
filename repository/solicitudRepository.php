@@ -30,10 +30,10 @@ class SolicitudRepository {
         $preparedConexion->execute();
     }
 
-    public static function borrarSolicitud($conexion, $idSolicitud) {
-        $preparedConexion = $conexion->prepare("DELETE FROM solicitud WHERE idSolicitud = :idSolicitud");
+    public static function borrarSolicitud($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("DELETE FROM solicitud WHERE idConvocatoria = :idConvocatoria");
 
-        $preparedConexion->bindParam(':idSolicitud', $idSolicitud);
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
 
         $preparedConexion->execute();
     }
@@ -56,6 +56,18 @@ class SolicitudRepository {
     public static function obtenerSolicitudId($conexion, $dniCandidato) {
         $preparedConexion = $conexion->prepare("SELECT * FROM solicitud WHERE dniCandidato= :dniCandidato");
         $preparedConexion->bindParam(':dniCandidato', $dniCandidato);
+
+        $preparedConexion->execute();
+        $soliciudes = array();
+
+        $soliciudes = $preparedConexion->fetchAll(PDO::FETCH_OBJ);
+        
+        return SolicitudRepository::arraySolicitudes($soliciudes);
+    }
+
+    public static function obtenerSolicitudConvocatoria($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("SELECT * FROM solicitud WHERE idConvocatoria= :idConvocatoria");
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria);
 
         $preparedConexion->execute();
         $soliciudes = array();

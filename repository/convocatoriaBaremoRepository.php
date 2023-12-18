@@ -47,5 +47,13 @@ class convocatoriaBaremoRepository{
         
         return convocatoriaBaremoRepository::arrayConvocatoriaBaremo($soliciudes);
     }
+
+    public static function borrarConvocatoriaBaremo($conexion, $idConvocatoria) {
+        $preparedConexion = $conexion->prepare("DELETE FROM convocatoriaBaremo WHERE idConvocatoria = :idConvocatoria");
+
+        $preparedConexion->bindParam(':idConvocatoria', $idConvocatoria-1);
+
+        $preparedConexion->execute();
+    }
 }
 ?>

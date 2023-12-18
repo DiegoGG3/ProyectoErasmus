@@ -28,6 +28,8 @@ $convocatorias = DB::selectUniversal($conexion, 'convocatoria');
                 <td><?php echo htmlspecialchars($convocatoria->getDestino()); ?></td>
                 <td>
                     <button class="asignar" onclick="accederConvocatoria(this)">Editar convocatoria</button>
+                    <button class="asignar" onclick="eliminarConvocatoria(this)">Eliminar convocatoria</button>
+
                 </td>
             </tr>
         <?php endforeach; ?>
@@ -36,5 +38,6 @@ $convocatorias = DB::selectUniversal($conexion, 'convocatoria');
  
 </body>
 <script src="./js/editaConvocatoria.js"></script>
+<script src="./js/eliminaConvocatoria.js"></script>
 
 </html>
