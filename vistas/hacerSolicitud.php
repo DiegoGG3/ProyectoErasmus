@@ -76,5 +76,4 @@ $convocatoriaId = isset($_POST['convocatoriaId']) ? $_POST['convocatoriaId'] : n
 <script src="./js/foto.js" defer></script>
 
 
-
 </html>
